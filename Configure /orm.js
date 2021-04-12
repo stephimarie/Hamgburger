@@ -1,5 +1,4 @@
-const connection = require("../Config/connection.js");
-//  fix link
+const connection = require("../Configure/connection.js");
 
 // Helper function for SQL syntax.
 

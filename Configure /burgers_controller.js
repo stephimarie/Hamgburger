@@ -23,3 +23,19 @@ router.get("/", (req, res) => {
       res.redirect("/");
     });
   });
+
+  router.put("/:id", (req, res) => {
+    const condition = "id = " + req.params.id;
+  
+    console.log("condition", condition);
+  
+    burger.update({
+      devoured: req.body.devoured
+    }, condition, () => {
+      res.redirect("/");
+    });
+  });
+
+
+// Export routes for server.js to use.
+    module.exports = router;

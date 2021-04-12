@@ -19,7 +19,6 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// fix this 
 const routes = require('./Controller/burgers_controller');
 app.use(routes);
 

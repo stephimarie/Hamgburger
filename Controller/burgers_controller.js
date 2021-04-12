@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const burger = require("../Models/burger.js");
+const burger = require("../Models/burger");
 // fix link
 
 // Create all our routes 

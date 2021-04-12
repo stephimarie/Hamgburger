@@ -1,5 +1,4 @@
 const orm = require("../Configure/orm.js");
-// fix link 
 
 const burger = {
     all(cb) {

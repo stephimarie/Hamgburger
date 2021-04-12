@@ -1,4 +1,4 @@
-const orm = require("../Config/orm.js");
+const orm = require("../Configure/orm.js");
 // fix link 
 
 const burger = {

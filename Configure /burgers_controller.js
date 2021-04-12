@@ -13,3 +13,13 @@ router.get("/", (req, res) => {
       res.render("index", hbsObject);
     });
   });
+
+  router.post("/", (req, res) => {
+    burger.create([
+      "burger_name", "devoured"
+    ], [
+      req.body.burgerName, 0
+    ], () => {
+      res.redirect("/");
+    });
+  });

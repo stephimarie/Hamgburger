@@ -1,0 +1,58 @@
+<div class="container-nav">
+    <h1>Eat Da Burger!</h1>
+</div>
+
+<div class="container add">
+    <form action="/" class="create" method="POST">
+        <div class="form-group">
+            <label for="add-burger">Enter a Burger:</label>
+            <input type="text" id="burger" name="burgerName">
+        </div>
+        <button type="submit" class="btn btn-secondary btn-sm">Add Burger</button>
+    </form>
+</div>
+
+<div class="panel panel-default col-md-5" style="padding: 0px">
+    <div class="panel-heading">
+        <h3>Burger to Eat</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul>
+            {{#each burger}}
+            {{#unless this.devoured}}
+            <li>
+                <form action="/{{this.id}}?_method=PUT" method="POST" class="update-button">
+                    {{this.burger_name}}
+                <input type="hidden" name="devoured" value=1>
+                <button type="submit" class="btn btn-secondary btn-sm">DEVOUR!</button>
+                </form>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="col-md-1"></div>
+
+<div class="panel panel-default col-md-5" style="padding: 0px">
+    <div class="panel-heading">
+      <h3>Devoured!</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        {{#each burger}}
+          {{#if this.devoured}}
+            <li>
+              {{this.id}}<span>.</span> {{this.burger_name}}
+
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+
+    </div>
+  </div>
+      
+</div>
